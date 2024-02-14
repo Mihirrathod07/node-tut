@@ -1,8 +1,23 @@
-const { dir } = require('console');
-const fs =require('fs');
-const path = require('path');
-const dirPath = path.join(__dirname,'crud');
-const filePath= `${dirPath}/apple.txt`;
+let a=10;
+let b=0;
+
+setTimeout(() => {
+    b=20
+}, 2000)
+console.log(a+b)
+// console.log("start exe...")
+
+// setTimeout(() => {
+//     console.log("logic exe...")
+// }, 2000)
+// console.log("complete exe...")
+
+// Crud opration with file system
+// const { dir } = require('console');
+// const fs =require('fs');
+// const path = require('path');
+// const dirPath = path.join(__dirname,'crud');
+// const filePath= `${dirPath}/apple.txt`;
 
 //fs.writeFileSync(filePath,'this is the simple files');
 // fs.readFile(filePath,'utf8',(err,item)=>{
@@ -14,7 +29,10 @@ const filePath= `${dirPath}/apple.txt`;
 // fs.rename(filePath,`${dirPath}/fruit.txt`,(err)=>{
 //     if(!err) console.log("file name changed")
 // })
-fs.unlinkSync(`${dirPath}/fruit.txt`)
+// fs.unlinkSync(`${dirPath}/fruit.txt`)
+
+
+
 
 // Display file list from folder
 // const fs =require('fs');
