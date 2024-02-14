@@ -1,20 +1,33 @@
 
+const express =require('express');
+const app =express();
+
+app.get('',(req,res)=>{
+    res.send('hello, this is home page');
+});
+
+app.get('/about',(req,res)=>{
+    res.send('hello, this is about page');
+});
+
+app.listen(8000);
 
 
 
 
-let a=10;
-let b=0;
+// Handle Asynchronous data
+// let a=10;
+// let b=0;
 
-let waitingData=new Promise((resolve,reject)=>{
-setTimeout(() => {
-    resolve(30)
-}, 2000)
-})
-waitingData.then((data)=>{
-    b=data;
-    console.log(a+b)
-})
+// let waitingData=new Promise((resolve,reject)=>{
+// setTimeout(() => {
+//     resolve(30)
+// }, 2000)
+// })
+// waitingData.then((data)=>{
+//     b=data;
+//     console.log(a+b)
+// })
 
 
 
