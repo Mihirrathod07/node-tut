@@ -1,35 +1,38 @@
 
-const express =require('express');
-const app =express();
 
-app.get('',(req,res)=>{
-    res.send(`
-    <h1>hello, this is home page</h1>
-    <a href ="/about"> Go to About page </a>
-    `);
-});
 
-app.get('/about',(req,res)=>{
-    res.send(`
-    <input type = "text" placeholder=" User Name" value="${req.query.name}" />
-    <button>Click Me</button>
-    <a href ="/"> Go to Home page </a>
-    `);
-});
+// render html and json
+// const express =require('express');
+// const app =express();
 
-app.get('/help',(req,res)=>{
-    res.send([{
-        name:'mihir',
-        email:'mihir@gmail.com'
-    },
-    {
-        name:'mihir Rathod',
-        email:'mihirrathod@gmail.com' 
-    }
-    ]);
-});
+// app.get('',(req,res)=>{
+//     res.send(`
+//     <h1>hello, this is home page</h1>
+//     <a href ="/about"> Go to About page </a>
+//     `);
+// });
 
-app.listen(8000);
+// app.get('/about',(req,res)=>{
+//     res.send(`
+//     <input type = "text" placeholder=" User Name" value="${req.query.name}" />
+//     <button>Click Me</button>
+//     <a href ="/"> Go to Home page </a>
+//     `);
+// });
+
+// app.get('/help',(req,res)=>{
+//     res.send([{
+//         name:'mihir',
+//         email:'mihir@gmail.com'
+//     },
+//     {
+//         name:'mihir Rathod',
+//         email:'mihirrathod@gmail.com' 
+//     }
+//     ]);
+// });
+
+// app.listen(8000);
 
 
 
