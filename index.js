@@ -1,16 +1,44 @@
+
+
+
+
+
 let a=10;
 let b=0;
 
+let waitingData=new Promise((resolve,reject)=>{
 setTimeout(() => {
-    b=20
+    resolve(30)
 }, 2000)
-console.log(a+b)
+})
+waitingData.then((data)=>{
+    b=data;
+    console.log(a+b)
+})
+
+
+
+
+
+// Asynchronous Programming Language
+// let a=10;
+// let b=0;
+
+// setTimeout(() => {
+//     b=20
+// }, 2000)
+// console.log(a+b)
 // console.log("start exe...")
 
 // setTimeout(() => {
 //     console.log("logic exe...")
 // }, 2000)
 // console.log("complete exe...")
+
+
+
+
+
 
 // Crud opration with file system
 // const { dir } = require('console');
@@ -34,6 +62,7 @@ console.log(a+b)
 
 
 
+
 // Display file list from folder
 // const fs =require('fs');
 // const path = require('path');
@@ -48,6 +77,10 @@ console.log(a+b)
 //         console.log("file name is", item)
 //     })
 // })
+
+
+
+
 
 
 
@@ -68,6 +101,10 @@ console.log(a+b)
 // {
 //     console.log("invalid input ")
 // }
+
+
+
+
 
 
 
