@@ -14,9 +14,13 @@ app.get('/profile',(_,resp)=>{
     const user={
         name:'mihir rathod',
         email:'mihir@gmail.com',
-        city: 'Ahmedabad'
+        city: 'Ahmedabad',
+        skills:['html','css','react','node']
     }
     resp.render('profile',{user});
+})
+app.get('/login',(_,resp)=>{
+    resp.render('login')
 })
 app.get('/about',(_,resp)=>{
     resp.sendFile(`${publicPath}/about.html`)
