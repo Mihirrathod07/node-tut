@@ -10,6 +10,14 @@ app.set('view engine','ejs');
 app.get('',(_,resp)=>{
 resp.sendFile(`${publicPath}/index.html`)
 })
+app.get('/profile',(_,resp)=>{
+    const user={
+        name:'mihir rathod',
+        email:'mihir@gmail.com',
+        city: 'Ahmedabad'
+    }
+    resp.render('profile',{user});
+})
 app.get('/about',(_,resp)=>{
     resp.sendFile(`${publicPath}/about.html`)
     })
