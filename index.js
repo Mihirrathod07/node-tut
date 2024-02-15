@@ -1,118 +1,56 @@
+const express = require('express');
+const app = express();
+const reqFilter = (req, resp, next) => {
+    if (!req.query.age) {
+        resp.send("Please provide your age")
+    }
+    else if (req.query.age<18) {
+        resp.send("You are under aged")
+    }
+    else {
+        next();
+    }
+}
 
+app.use(reqFilter);
 
+app.get('/', (res, resp) => {
+    resp.send('Welcome to Home page')
+});
 
-
-
-let a=10;
-let b=0;
-
-let waitingData=new Promise((resolve,reject)=>{
-setTimeout(() => {
-    resolve(30)
-}, 2000)
-})
-waitingData.then((data)=>{
-    b=data;
-    console.log(a+b)
-})
-
-
-
-
-
-// Asynchronous Programming Language
-// let a=10;
-// let b=0;
-
-// setTimeout(() => {
-//     b=20
-// }, 2000)
-// console.log(a+b)
-// console.log("start exe...")
-
-// setTimeout(() => {
-//     console.log("logic exe...")
-// }, 2000)
-// console.log("complete exe...")
+app.get('/users', (res, resp) => {
+    resp.send('Welcome to Users page')
+});
+app.listen(8000)
 
 
 
 
 
 
-// Crud opration with file system
-// const { dir } = require('console');
-// const fs =require('fs');
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const express =require('express');
 // const path = require('path');
-// const dirPath = path.join(__dirname,'crud');
-// const filePath= `${dirPath}/apple.txt`;
 
-//fs.writeFileSync(filePath,'this is the simple files');
-// fs.readFile(filePath,'utf8',(err,item)=>{
-//     console.log(item)
-// })
-// fs.appendFile(filePath,'and file name is apple.txt',(err)=>{
-//     if(!err) console.log("file is updated")
-// })
-// fs.rename(filePath,`${dirPath}/fruit.txt`,(err)=>{
-//     if(!err) console.log("file name changed")
-// })
-// fs.unlinkSync(`${dirPath}/fruit.txt`)
+// const app =express();
+// const publicPath= path.join(__dirname,'public');
+
+// app.use(express.static(publicPath));
+
+// app.listen(8000);
 
 
 
 
-
-// Display file list from folder
-// const fs =require('fs');
-// const path = require('path');
-// const dirPath = path.join(__dirname,'files');
-//  for(i=0;i<5;i++)
-//  {
-//      fs.writeFileSync(dirPath+"/Hello"+i+".txt","a simple tet file");
-//  }
-
-// fs.readdir(dirPath,(err,files)=>{
-//     files.forEach((item)=>{
-//         console.log("file name is", item)
-//     })
-// })
-
-
-
-
-
-
-
-// getting input from command line
-// const fs = require('fs');
-
-// const input = process.argv;
-
-// if(input[2]=='add')
-// {
-//     fs.writeFileSync(input[3],input[4])
-// }
-// else if(input[2]=='remove')
-// {
-//     fs.unlinkSync(input[3])
-// }
-// else
-// {
-//     console.log("invalid input ")
-// }
-
-
-
-
-
-
-
-// simple basic api
-// const http= require('http');
-// const data =require('./data');
-// http.createServer((req,resp)=>{
-// resp.writeHead(200,{'Content-Type':'application/json'});
-// resp.write(JSON.stringify(data));
-// resp.end();
-// }).listen(8000);
