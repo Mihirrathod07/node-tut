@@ -1,20 +1,59 @@
+const dbConnect= require('./mongodb');
 
-
-
-
-
-let a=10;
-let b=0;
-
-let waitingData=new Promise((resolve,reject)=>{
-setTimeout(() => {
-    resolve(30)
-}, 2000)
+dbConnect().then((resp)=>{
+resp.find({name:'nord'}).toArray().then((data)=>{
+console.log(data)
 })
-waitingData.then((data)=>{
-    b=data;
-    console.log(a+b)
 })
+
+const main=async ()=>{
+   let data = await dbConnect();
+   data = await data.find({name:'nord'}).toArray();
+   console.log(data)
+}
+
+main()
+
+
+
+
+
+// const {MongoClient} = require('mongodb')
+// const url= 'mongodb://localhost:27017';
+// const databaseName='e-commerce'
+// const client= new MongoClient(url);
+
+// async function getData()
+// {
+//     let result = await client.connect();
+//     db= result.db(databaseName);
+//     collection = db.collection('products');
+//     let data = await collection.find({brand:'MI'}).toArray();
+//     console.log(data)
+
+
+// }
+
+// getData();
+
+
+
+
+
+
+
+// let a=10;
+// let b=0;
+
+// let waitingData=new Promise((resolve,reject)=>{
+// setTimeout(() => {
+//     resolve(30)
+// }, 2000)
+// })
+// waitingData.then((data)=>{
+//     b=data;
+//     console.log(a+b)
+// })
 
 
 
